@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FastTime Deliverys</title>
+    <script src="https://kit.fontawesome.com/b12789a7cf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/bootstrap.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+
+<body>
+
+   
+
+
+    <div id="init-sec">
+        <div id="barra"></div>
+        <div class="logo">
+            <img src="assets/img/Logo001.png" alt="">
+        </div>
+        <div id="inicio-sesion">
+            <section id="fondo-is">
+                <p>¡Te damos la bienvenida!</p>
+                <h1>Inicia Sesión</h1>
+                <div class="inputs">
+                    <i class="far fa-envelope"></i>
+                    <input type="email" placeholder="Correo/Telefono">
+                </div>
+                <div class="inputs">
+                    <i class="fa-solid fa-key"></i>
+                    <input type="password" placeholder="Contraseña">
+                </div>
+                <br>
+                <button id="iniciar-sesion-bnt" onclick="iniciarSecion()">
+                    Iniciar Sesión
+                </button>
+                <br>
+                <button id="iniciar-google-bnt">Iniciar con Google</button>
+            </section>
+        </div>
+    </div>
+
+        
+    <div class="no-ver" id="home">
+        <div  class="fondo-admin">
+            <div class="menu">
+                    <img class="logo" src="../administrative/assets/img/Logo001.png" alt="">
+                <div onclick="cambiarVentana('home-menu','1')" class="opciones select-opt" id="1">
+                    <i class="fa-solid fa-house"></i>
+                    <p>Home</p>
+                </div>
+                <div onclick="cambiarVentana('admin-empresas','2')"  class="opciones" id="2">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <p>Administrar Empresas</p>
+                </div>
+                <div onclick="cambiarVentana('product-empresa','3')" class="opciones" id="3">
+                    <i class="fa-solid fa-boxes-packing"></i>
+                    <p>Productos Empresas</p>
+                </div>
+                <div onclick="cambiarVentana('aprobar-motorista','4')" class="opciones" id="4">
+                    <i class="fa-solid fa-motorcycle"></i>
+                    <p>Registro Motoristas</p>
+                </div>
+                <div onclick="cambiarVentana('ordenes-disponibles','5')" class="opciones" id="5">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <p>Ordenes Disponibles</p>
+                </div>  
+            </div>
+
+            <div class="nav-y-cont">
+                <nav class="nav-admin"><h6>Bienvenid@s</h6></nav>
+                <div class="parte-white">
+                    <div class='' id="home-menu">
+                        <h1 class="saludo">¡Hola!</h1>
+                        <div class="cajas">
+                        <div class="caja c1" onclick="cambiarVentana('admin-empresas','2')">
+                            <i class="fa-solid fa-user-gear"></i>
+                            <p>Administrar Empresas</p>
+                            
+                        </div>
+                        <div class="caja c2" onclick="cambiarVentana('product-empresa','3')">
+                            <i class="fa-solid fa-boxes-packing"></i>
+                            <p>Productos Empresa</p>
+                            <div id="animation2"></div>
+                        </div>
+                        <div class="caja c3" onclick="cambiarVentana('aprobar-motorista','4')">
+                            <i class="fa-solid fa-motorcycle"></i>
+                            <p>Registro Motoristas</p>
+                        </div>
+                        <div class="caja c4" onclick="cambiarVentana('ordenes-disponibles','5')">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <p>Ordenes Disponibles</p>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    </div>
+                    
+                    <div id="admin-empresas" class="no-ver">
+                        <h1 class="saludo agr-title">Agregar Empresa</h1><br>
+
+                        <P>Nombre de la empresa</P>
+                        <input id="nombreEmpresa" type="text"><br><br>
+                        
+                        <p>Ubicación de la empresa</p>
+                        <input id="ubicacionEmpresa" type="text"><br><br>
+
+                        <p>Categoria</p>
+                        <div class="btn-group">
+                            <button id="categoria"  type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Categoría
+                            </button>
+                            <div class="dropdown-menu">
+                              <a onclick="cambiarCategoria('Restaurante')" class="dropdown-item" href="#">Restaurante</a>
+                              <a onclick="cambiarCategoria('Bebidas')" class="dropdown-item" href="#">Bebidas</a>
+                              <a onclick="cambiarCategoria('Farmacias')" class="dropdown-item" href="#">Farmacias</a>
+                              <a onclick="cambiarCategoria('Café')" class="dropdown-item" href="#">Café</a>
+                              <a onclick="cambiarCategoria('Tiendas')" class="dropdown-item" href="#">Tiendas</a>
+                              <a onclick="cambiarCategoria('Super')" class="dropdown-item" href="#">Super</a>
+                            </div>
+                          </div>
+
+                          <p>Logo</p>
+                          <input id="logoEmpresa" type="text">
+                          <br>
+                          <br>
+                          <button onclick="guardarEmpresa()" class="boton-agregar">Agregar</button>
+                          
+                          <!--<div id="animation2"></div>-->
+                    </div>
+
+                   
+
+                    
+                    
+                    <div id="product-empresa" class="no-ver">
+                        
+                        <h1 class="saludo agr-title">Agregar Producto</h1>
+
+                        <P>Nombre del producto</P>
+                        <input type="text" id="nombreProducto">
+
+                        <p>Categoria</p>
+    
+                        <div class="btn-group">
+                            <button id="local" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                kentucky CityMall
+                            </button>
+                            <div class="dropdown-menu">
+                             <a class="dropdown-item" href="#">kentucky MetroMall</a>
+                              <a class="dropdown-item" href="#">Pizza Hut</a>
+                              <a class="dropdown-item" href="#">Burger King</a>
+                              <a class="dropdown-item" href="#">Coco Baleadas</a>
+                              <a class="dropdown-item" href="#">little caesars</a>
+                            </div>
+                          </div>
+
+                        <p>Descripción de producto</p>
+                        <input id="decripcionProducto" type="text">
+
+                        <p>Imagen de Producto</p>
+                        <input id="imagenProducto" type="text">
+
+                        <p>Precio Producto</p>
+                        <input id="precioProducto" type="text"> LPS
+
+                        <br>
+                        <br>
+                        <button class="boton-agregar" onclick="guardarProducto()">Agregar</button>
+                    </div>
+
+                    <div id="aprobar-motorista" class="no-ver">
+                        <h1 class="saludo agr-title">Aprobar Motorista</h1>
+                        <div class="fondo-apr-mot">
+                            <div class="apr-mot">
+                                <div>
+                                    <img class="deli" src="./assets/img/delive.jpg" alt="">
+                                </div>
+                                
+                                <div>
+                                    <p>Juan Diego Rodriguez Perez</p>
+                                    <div style="display: flex;">
+                                        <p>Telefono:</p><p>98457329</p>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <p>Ciudad:</p><p>Tegucigalpa,Francisco Morazán</p>
+                                    </div>
+                                    
+                                </div>
+    
+                                <div>
+                                    <a href="#">Ver curriculum</a>
+                                    <div style="display: flex;">
+                                        <p>Fecha de Nacimiento:</p><p>28/03/1996</p>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <p>Modelo Motocicleta</p><p>ybr125</p>
+                                    </div>
+                                </div>
+    
+                                <div>
+                                    <div style="display: flex;">
+                                        <p>Género</p><p>Masculino</p>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <p>Placa de Motocicleta:</p><p>pt556648</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; justify-content: flex-end;" >
+                                <button class="boton aprobar">Aprobar</button>
+                                <button class="boton rechazar">Rechazar</button>
+                                </div>
+                                
+                            
+                        </div>
+                        
+                    </div>
+
+                    <div id="ordenes-disponibles" class="no-ver">
+                        <h1 class="saludo agr-title">Ordenes Disponibles</h1>
+
+                        <div class="square-ordenes">
+                            <div class="ordenes">
+                                <img src="./assets/img/kfc.png" alt="">
+                                <p>Big Box</p>
+                                <p>kentucky CityMall</p>
+                                <p>Motorista:</p>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Asignar Motorista
+                                    </button>
+                                    <div class="dropdown-menu">
+                                      <a class="dropdown-item" href="#">Motorista 1</a>
+                                      <a class="dropdown-item" href="#">Motorista 2</a>
+                                      <a class="dropdown-item" href="#">Motorista 3</a>
+                                      <a class="dropdown-item" href="#">Motorista 4</a>
+                                      <a class="dropdown-item" href="#">Motorista 5</a>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <p>Usuario: Dulce Maria</p>
+                                    <b>Número:9563254</b>
+                                  </div>
+                            </div>
+                            <div class="ordenes">
+                                <b>Entrega: </b><p>Miraflores</p>
+                                <div class="ubicacion">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <p>Ver ubicación</p>
+                                </div>
+                                <p>Estado: </p>
+                                <div class="estado">
+                                    Sin Tomar
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+              
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.js"></script>
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/controlador.js"></script>
+</body>
+</html>
